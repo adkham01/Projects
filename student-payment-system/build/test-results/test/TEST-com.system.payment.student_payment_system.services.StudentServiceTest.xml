@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.system.payment.student_payment_system.services.StudentServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-06-03T21:48:11.026Z" hostname="ADKHAM" time="1.128">
+  <properties/>
+  <testcase name="deleteStudent_ShouldCallRepositoryDelete()" classname="com.system.payment.student_payment_system.services.StudentServiceTest" time="1.082"/>
+  <testcase name="getStudentById_WhenFound_ShouldReturnStudent()" classname="com.system.payment.student_payment_system.services.StudentServiceTest" time="0.01"/>
+  <testcase name="getStudentById_WhenNotFound_ShouldThrowException()" classname="com.system.payment.student_payment_system.services.StudentServiceTest" time="0.011"/>
+  <testcase name="createStudent_ShouldReturnStudent()" classname="com.system.payment.student_payment_system.services.StudentServiceTest" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
