@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-08-28T14:45:16Z"
+  labels:
+    app: mysql-urlshrtener
+  name: mysql-urlshrtener
+  namespace: default
+  resourceVersion: "4584435"
+  uid: 4242ec34-f94c-4bd7-b827-3e15ba3d4e63
+spec:
+  clusterIP: 172.20.66.52
+  clusterIPs:
+  - 172.20.66.52
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30684
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysql-urlshrtener
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

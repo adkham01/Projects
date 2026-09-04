@@ -1,0 +1,11 @@
+docker run -d \
+  --name mysql-urlshrtener \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=urlshrtenerdb \
+  -e MYSQL_USER=appuser \
+  -e MYSQL_PASSWORD=apppass123 \
+  -p 3306:3306 \
+  -v mysql_data:/var/lib/mysql \
+  mysql:8.0
+
+docker exec -it mysql-urlshrtener mysql -uappuser -papppass123 -D urlshrtenerdb

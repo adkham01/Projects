@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: url-shortener-sb
+  datasource:
+    url: jdbc:mysql://localhost:3306/urlshrtenerdb
+    username: appuser
+    password: apppass123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        use_sql_comments: true
+    show-sql: true
+security:
+  jwt:
+    secret: a904480183307247b6aea97544678529b7c1427cf1bf03d2beb6d57022a87b9b
+    expiration: 172800000
+  matchers:
+    authPattern: /api/auth/**
+    urls: /api/urls/**
