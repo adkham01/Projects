@@ -7,11 +7,13 @@ import com.url.shortener.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -34,5 +36,14 @@ public class UrlMappingController {
     public ResponseEntity<String> test(@RequestBody Map<String, String> request){
         String orgUrl = request.get("originalUrl");
         return ResponseEntity.ok(orgUrl);
+    }
+
+    @GetMapping("/api/urls/myurls")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<List<UrlMappingDto>> getUserUrls(@RequestBody Map<String, String> request,
+                                                              Principal principal){
+        User user = userService.findByUsername(principal.getName());
+        List<UrlMappingDto> urls = service.getUrlsByUser(user);
+        return ResponseEntity.ok(urls);
     }
 }
