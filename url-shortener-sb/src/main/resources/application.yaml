@@ -13,7 +13,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
         use_sql_comments: true
-    show-sql: true
+    show-sql: false
 security:
   jwt:
     secret: a904480183307247b6aea97544678529b7c1427cf1bf03d2beb6d57022a87b9b

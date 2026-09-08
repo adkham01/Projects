@@ -56,10 +56,11 @@ public class JwtUtils {
         try {
             Jwts.parser().verifyWith((SecretKey) key())
                     .build().parseSignedClaims(authToken);
+            return true;
         } catch (JwtException | IllegalArgumentException e) {
             throw new RuntimeException(e);
         }
-        return true;
+
     }
     private Key key(){
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
